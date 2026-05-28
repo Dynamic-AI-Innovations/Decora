@@ -1,0 +1,48 @@
+project_id = "decora"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+api_url = "http://localhost:54321"
+
+[storage]
+enabled = true
+file_size_limit = "10MiB"
+buckets = [
+  { name = "room-uploads", public = false, file_size_limit = "10MiB", allowed_mime_types = ["image/jpeg", "image/png", "image/heic", "image/webp"] },
+  { name = "renders", public = true, file_size_limit = "10MiB", allowed_mime_types = ["image/jpeg", "image/png", "image/webp"] }
+]
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 900
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+
+[auth.external.google]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GOOGLE_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
+[edge_runtime]
+enabled = true
+ip_version = "ipv4"

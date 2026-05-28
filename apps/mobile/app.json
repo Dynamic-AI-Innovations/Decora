@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Decora",
+    "slug": "decora",
+    "scheme": "decora",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.dynamicaiinnovations.decora",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Decora needs your camera to capture photos of your room for AI redesign.",
+        "NSPhotoLibraryUsageDescription": "Decora needs access to your photos so you can pick a room to redesign."
+      }
+    },
+    "android": {
+      "package": "com.dynamicaiinnovations.decora",
+      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"],
+      "adaptiveIcon": {
+        "backgroundColor": "#0F0F0F"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Decora to use your camera to redesign your room."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Decora to access your photos to pick a room to redesign."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
