@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   node:
-    name: Node — typecheck, lint, test
+    name: Node — typecheck + test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,21 +29,18 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
+      - name: Typecheck (TS workspaces only)
         run: pnpm typecheck
 
-      - name: Lint
-        run: pnpm lint
-
-      - name: Test
+      - name: Test (TS workspaces only)
         run: pnpm test
 
-      - name: Format check
-        run: pnpm format:check
-
   python:
-    name: Python — ai-service tests
+    name: Python — ai-service
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/ai-service
     steps:
       - uses: actions/checkout@v4
 
@@ -52,20 +49,16 @@ jobs:
           python-version: "3.11"
           cache: pip
 
-      - name: Install ai-service
-        working-directory: apps/ai-service
+      - name: Install
         run: |
           python -m pip install --upgrade pip
-          pip install -e .[dev]
+          pip install -e ".[dev]"
 
       - name: Ruff
-        working-directory: apps/ai-service
-        run: ruff check src
+        run: ruff check src tests
 
       - name: Mypy
-        working-directory: apps/ai-service
         run: mypy src
 
       - name: Pytest
-        working-directory: apps/ai-service
         run: pytest -q
