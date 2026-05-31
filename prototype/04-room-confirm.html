@@ -13,71 +13,44 @@
     <div class="phone">
       <div class="phone-header">
         <span>9:44</span>
-        <span class="icons">●●●● 99%</span>
+        <span class="icons">●●●●</span>
       </div>
 
       <div class="phone-content">
-        <div class="row-between">
-          <a class="btn btn-link" href="03-upload.html">← Retake</a>
-          <span class="label">Step 1 of 4</span>
-        </div>
+        <div class="hero" style="height: 560px;">
+          <div class="scene scene-before scene-noise" style="position:absolute; inset:0;">
+            <div class="scene-window"></div>
+          </div>
 
-        <div class="progress mt-3"><div class="bar" style="width: 25%"></div></div>
+          <div class="hero-overlay-top">
+            <a class="btn btn-glass btn-icon" href="03-upload.html">←</a>
+          </div>
 
-        <div class="mt-6">
-          <span class="eyebrow">We detected</span>
-          <h2 class="title mt-2">Your living room.</h2>
-          <p class="body mt-2">Confirm or fix anything below — accurate detection makes the render better.</p>
-        </div>
+          <span class="tag-pill" style="top: 28%; left: 18%;">
+            <span class="tag-thumb">🛋️</span>
+            <span class="tag-name">Sofa</span>
+          </span>
+          <span class="tag-pill" style="top: 42%; right: 14%;">
+            <span class="tag-thumb">🪟</span>
+            <span class="tag-name">Window</span>
+          </span>
+          <span class="tag-pill" style="bottom: 30%; left: 28%;">
+            <span class="tag-thumb">📺</span>
+            <span class="tag-name">TV unit</span>
+          </span>
 
-        <div class="room-mock room-before mt-4">
-          <div class="window"></div>
-          <div class="sofa"></div>
-          <div class="floor"></div>
-        </div>
-
-        <div class="card mt-4">
-          <div class="row-between">
-            <div class="row">
-              <div style="width:36px;height:36px;background:rgba(47,143,95,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;">✓</div>
-              <div class="col">
-                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Room type</div>
-                <div style="font-weight:600;font-size:15px;">Parlour / Living room</div>
-              </div>
-            </div>
-            <button class="btn btn-ghost btn-sm">Change</button>
+          <div class="hero-overlay" style="padding: 100px 24px 32px;">
+            <span class="chip chip-glass mb-4">Detected</span>
+            <h1 class="title" style="color:white;">Your parlour.<br/>About 4 × 5 m.</h1>
           </div>
         </div>
 
-        <div class="card mt-3">
-          <div class="row-between">
-            <div class="row">
-              <div style="width:36px;height:36px;background:rgba(47,143,95,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;">📏</div>
-              <div class="col">
-                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Approx. size</div>
-                <div style="font-weight:600;font-size:15px;">4.0 m × 5.2 m · ceiling ~2.8 m</div>
-              </div>
-            </div>
-            <button class="btn btn-ghost btn-sm">Adjust</button>
+        <div class="phone-padded" style="padding-top:16px;">
+          <a class="btn btn-primary btn-block" href="05-style-picker.html">Looks right</a>
+          <div class="text-center mt-3">
+            <a class="btn-link">Edit details</a>
           </div>
         </div>
-
-        <div class="card mt-3">
-          <div class="row">
-            <div style="width:36px;height:36px;background:rgba(47,143,95,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;">🛋️</div>
-            <div class="col" style="flex:1;">
-              <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">What we see</div>
-              <div style="font-weight:600;font-size:15px;">1 sofa · 2 armchairs · TV unit · 1 window</div>
-            </div>
-          </div>
-          <div class="row mt-3 gap-2" style="flex-wrap:wrap;">
-            <span class="chip chip-outline">+ Coffee table</span>
-            <span class="chip chip-outline">+ Curtains</span>
-            <span class="chip chip-outline">+ Rug</span>
-          </div>
-        </div>
-
-        <a class="btn btn-primary btn-block mt-auto" href="05-style-picker.html">Looks right — pick a style</a>
       </div>
     </div>
   </div>

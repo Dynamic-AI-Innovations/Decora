@@ -13,57 +13,43 @@
     <div class="phone">
       <div class="phone-header">
         <span>9:46</span>
-        <span class="icons">●●●● 98%</span>
+        <span class="icons">●●●●</span>
       </div>
 
-      <div class="phone-content">
+      <div class="phone-content phone-padded">
         <div class="row-between">
-          <a class="btn btn-link" href="05-style-picker.html">← Back</a>
-          <span class="label">Step 3 of 4</span>
+          <a class="btn btn-link" href="05-style-picker.html">←</a>
+          <div class="progress" style="flex:1; max-width:120px;"><div class="bar" style="width: 75%"></div></div>
+          <span class="label">3 / 4</span>
         </div>
 
-        <div class="progress mt-3"><div class="bar" style="width: 75%"></div></div>
-
-        <div class="mt-4">
-          <span class="eyebrow">Set the spend</span>
-          <h2 class="title mt-2">What's your budget for this parlour?</h2>
-          <p class="body mt-2">In Naira. We'll keep every suggestion inside it.</p>
+        <div class="mt-8 text-center">
+          <span class="eyebrow-muted">Budget</span>
+          <div class="naira mt-3" style="font-family:'Fraunces',serif; font-size:64px; font-weight:300; letter-spacing:-0.035em; line-height:1; color:var(--fg);">
+            ₦500,000
+          </div>
+          <p class="body mt-3">Mid-range · plenty for a parlour</p>
         </div>
 
-        <div class="card mt-4" style="text-align:center;padding:24px 16px;background:linear-gradient(135deg,rgba(200,84,42,0.12),transparent);">
-          <div class="label">Currently</div>
-          <div class="naira mt-1" style="font-family:'Fraunces',serif;font-size:44px;font-weight:500;letter-spacing:-0.02em;color:var(--fg);">₦500,000</div>
-          <div class="body mt-1" style="font-size:13px;">Mid-range tier · realistic for Lekki / Yaba parlours</div>
-        </div>
-
-        <div class="mt-4">
-          <span class="label">Quick pick</span>
-          <div class="row gap-2 mt-2" style="flex-wrap:wrap;">
-            <span class="chip">₦100K</span>
-            <span class="chip">₦250K</span>
-            <span class="chip chip-active">₦500K</span>
-            <span class="chip">₦1M</span>
-            <span class="chip">₦2M+</span>
-            <span class="chip chip-outline">Custom</span>
+        <div class="mt-8" style="position:relative;">
+          <div style="height:3px; background:var(--surface-2); border-radius:99px; position:relative;">
+            <div style="height:100%; width:34%; background:var(--brand); border-radius:99px;"></div>
+            <div style="position:absolute; top:50%; left:34%; transform:translate(-50%,-50%); width:24px; height:24px; background:white; border-radius:50%; box-shadow:0 4px 14px rgba(0,0,0,0.4);"></div>
+          </div>
+          <div class="row-between mt-3 label">
+            <span>₦50K</span><span>₦5M+</span>
           </div>
         </div>
 
-        <div class="card mt-6">
-          <div class="row-between">
-            <div style="font-weight:600;font-size:14px;">What ₦500K typically buys</div>
-            <span class="pill pill-success">Realistic</span>
-          </div>
-          <div class="col gap-2 mt-3" style="font-size:13px;">
-            <div class="row-between"><span class="text-muted">Sofa (3-seater fabric)</span><span class="naira">₦200–280K</span></div>
-            <div class="row-between"><span class="text-muted">Coffee table + side</span><span class="naira">₦35–65K</span></div>
-            <div class="row-between"><span class="text-muted">Curtains + rod (1 window)</span><span class="naira">₦18–28K</span></div>
-            <div class="row-between"><span class="text-muted">Statement pendant light</span><span class="naira">₦12–22K</span></div>
-            <div class="row-between"><span class="text-muted">Area rug + cushions</span><span class="naira">₦25–45K</span></div>
-            <div class="row-between" style="padding-top:10px;border-top:1px solid var(--border);font-weight:600;color:var(--fg);"><span>Estimated total</span><span class="naira">₦390–470K</span></div>
-          </div>
+        <div class="row mt-6 gap-2" style="justify-content:center; flex-wrap:wrap;">
+          <span class="chip">₦100K</span>
+          <span class="chip">₦250K</span>
+          <span class="chip chip-active">₦500K</span>
+          <span class="chip">₦1M</span>
+          <span class="chip">₦2M+</span>
         </div>
 
-        <a class="btn btn-primary btn-block mt-auto" href="07-generating.html">Design my parlour →</a>
+        <a class="btn btn-primary btn-block mt-auto" href="07-generating.html">Design my parlour</a>
       </div>
     </div>
   </div>
