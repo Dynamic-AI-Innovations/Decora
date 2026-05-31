@@ -544,6 +544,85 @@ img { display: block; max-width: 100%; }
 .tag-pill .tag-name { font-size: 12px; font-weight: 600; color: var(--fg); }
 .tag-pill .tag-price { font-size: 11px; color: var(--muted-soft); font-variant-numeric: tabular-nums; }
 
+/* ===== Auth-specific ===== */
+.input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: -0.005em;
+}
+.input::placeholder { color: var(--muted); }
+.input:focus { outline: none; border-color: var(--brand); background: rgba(212, 90, 44, 0.05); }
+.input-row { position: relative; }
+.input-row .input { padding-left: 46px; }
+.input-row .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.divider-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.divider-text::before, .divider-text::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--fg);
+  transition: opacity 0.2s, transform 0.15s var(--easing);
+}
+.btn-social:hover { opacity: 0.9; }
+.btn-social:active { transform: scale(0.98); }
+.btn-social svg { flex-shrink: 0; }
+
+.auth-card {
+  position: relative;
+  margin-top: auto;
+  padding: 28px 24px 24px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(20, 18, 16, 0.94);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
+}
+
 /* ===== Progress / pipeline ===== */
 .progress { height: 3px; background: var(--surface-2); border-radius: 99px; overflow: hidden; }
 .progress > .bar { height: 100%; background: var(--brand); border-radius: 99px; }

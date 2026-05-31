@@ -20,6 +20,9 @@ const FILE_BY_SCREEN: Record<string, string> = {
   generating: '07-generating.html',
   viewer: '08-viewer.html',
   upgrade: '09-upgrade.html',
+  signup: '10-signup.html',
+  login: '11-login.html',
+  forgot: '12-forgot.html',
 };
 
 const ROUTE_BY_FILENAME: Record<string, string> = {
@@ -33,6 +36,9 @@ const ROUTE_BY_FILENAME: Record<string, string> = {
   '07-generating.html': '/generating',
   '08-viewer.html': '/viewer',
   '09-upgrade.html': '/upgrade',
+  '10-signup.html': '/signup',
+  '11-login.html': '/login',
+  '12-forgot.html': '/forgot',
 };
 
 export const SCREEN_SLUGS = Object.keys(FILE_BY_SCREEN);
@@ -47,6 +53,9 @@ export const SCREEN_TITLES: Record<string, string> = {
   generating: 'Generating',
   viewer: 'Render + budget',
   upgrade: 'Plan upgrade',
+  signup: 'Sign up',
+  login: 'Sign in',
+  forgot: 'Reset password',
 };
 
 function extractBody(html: string): string {
