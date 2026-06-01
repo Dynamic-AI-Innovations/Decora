@@ -157,89 +157,67 @@ img { display: block; max-width: 100%; }
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
 }
 
-/* ===== Room scenes (CSS art — premium gradients) ===== */
-.scene { position: relative; width: 100%; overflow: hidden; }
+/* ===== Room scenes — real Unsplash interior photography ===== */
+.scene {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--surface-2);
+}
+
+/* Subtle film-grain overlay for a more "rendered" look */
 .scene-noise::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-  opacity: 0.18;
+  opacity: 0.07;
   pointer-events: none;
   mix-blend-mode: overlay;
 }
 
-.scene-afro {
-  background:
-    radial-gradient(ellipse 70% 50% at 75% 18%, rgba(255, 220, 180, 0.65), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 25% 85%, rgba(212, 90, 44, 0.5), transparent 70%),
-    linear-gradient(170deg, #2c1d12 0%, #5a3a22 40%, #8a5a32 60%, #4a2f1a 100%);
+/* The eight Nigerian styles — each backed by a curated interior photo */
+.scene-afro       { background-image: url('https://images.unsplash.com/photo-1618220179428-22790b461013?w=1100&q=80&auto=format&fit=crop'); }
+.scene-lagos      { background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1100&q=80&auto=format&fit=crop'); }
+.scene-abuja      { background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1100&q=80&auto=format&fit=crop'); }
+.scene-yoruba     { background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1100&q=80&auto=format&fit=crop'); }
+.scene-diaspora   { background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1100&q=80&auto=format&fit=crop'); }
+.scene-tropical   { background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1100&q=80&auto=format&fit=crop'); }
+.scene-old-naija  { background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1100&q=80&auto=format&fit=crop'); }
+.scene-modern-ph  { background-image: url('https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1100&q=80&auto=format&fit=crop'); }
+
+/* Extras for variety */
+.scene-leather    { background-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1100&q=80&auto=format&fit=crop'); }
+.scene-luxe       { background-image: url('https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1100&q=80&auto=format&fit=crop'); }
+.scene-boho       { background-image: url('https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1100&q=80&auto=format&fit=crop'); }
+.scene-coastal    { background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1100&q=80&auto=format&fit=crop'); }
+.scene-bedroom    { background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1100&q=80&auto=format&fit=crop'); }
+
+/* "Before" treatments
+   - scene-empty : the user uploaded an empty / un-styled room. We simulate
+     this by desaturating and darkening a real interior photo so the
+     before/after contrast is dramatic.
+   - scene-cluttered : already-furnished but ready for a refresh.
+*/
+.scene-empty {
+  background-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1100&q=70&auto=format&fit=crop');
+  filter: grayscale(0.92) brightness(0.48) contrast(0.92);
 }
-.scene-lagos {
-  background:
-    radial-gradient(ellipse 75% 55% at 78% 22%, rgba(255, 245, 225, 0.7), transparent 60%),
-    radial-gradient(ellipse 50% 50% at 20% 90%, rgba(180, 145, 100, 0.35), transparent 70%),
-    linear-gradient(170deg, #2a221a 0%, #6b5640 35%, #c5a988 70%, #6b5640 100%);
-}
-.scene-abuja {
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 18%, rgba(245, 220, 165, 0.55), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 30% 90%, rgba(80, 50, 25, 0.6), transparent 70%),
-    linear-gradient(170deg, #1c1410 0%, #3a2818 40%, #8a6535 70%, #251a10 100%);
-}
-.scene-yoruba {
-  background:
-    radial-gradient(ellipse 60% 45% at 75% 22%, rgba(255, 195, 120, 0.55), transparent 60%),
-    radial-gradient(ellipse 50% 50% at 25% 88%, rgba(45, 65, 130, 0.5), transparent 70%),
-    linear-gradient(170deg, #1c1610 0%, #3a2418 40%, #a86528 65%, #2a1a14 100%);
-}
-.scene-diaspora {
-  background:
-    radial-gradient(ellipse 70% 50% at 80% 25%, rgba(245, 225, 200, 0.6), transparent 60%),
-    radial-gradient(ellipse 50% 50% at 20% 90%, rgba(120, 85, 55, 0.45), transparent 70%),
-    linear-gradient(170deg, #221a14 0%, #4a3825 40%, #b59470 70%, #3a2a1c 100%);
-}
-.scene-tropical {
-  background:
-    radial-gradient(ellipse 65% 50% at 72% 20%, rgba(240, 230, 200, 0.6), transparent 60%),
-    radial-gradient(ellipse 50% 50% at 28% 92%, rgba(80, 110, 75, 0.45), transparent 70%),
-    linear-gradient(170deg, #1a221a 0%, #3a4a3a 40%, #98ad88 70%, #2a3a2a 100%);
-}
-.scene-old-naija {
-  background:
-    radial-gradient(ellipse 60% 45% at 75% 22%, rgba(245, 215, 165, 0.55), transparent 60%),
-    radial-gradient(ellipse 55% 50% at 25% 90%, rgba(120, 35, 35, 0.55), transparent 70%),
-    linear-gradient(170deg, #1c1210 0%, #4a2018 35%, #b5654a 65%, #2a1414 100%);
-}
-.scene-modern-ph {
-  background:
-    radial-gradient(ellipse 70% 55% at 72% 24%, rgba(225, 235, 240, 0.55), transparent 60%),
-    radial-gradient(ellipse 50% 50% at 28% 90%, rgba(70, 105, 115, 0.4), transparent 70%),
-    linear-gradient(170deg, #182022 0%, #354548 40%, #95b0b8 70%, #2a3a40 100%);
-}
-.scene-before {
-  background:
-    radial-gradient(ellipse 60% 40% at 50% 30%, rgba(180, 165, 145, 0.18), transparent 60%),
-    linear-gradient(170deg, #1a1612 0%, #2a221c 50%, #1a1612 100%);
+.scene-cluttered {
+  background-image: url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=1100&q=70&auto=format&fit=crop');
+  filter: saturate(0.55) brightness(0.7) contrast(0.95);
 }
 
-/* Window light shafts overlay */
-.scene-window {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.scene-window::before {
-  content: '';
-  position: absolute;
-  top: 14%; right: 18%;
-  width: 22%; height: 38%;
-  border-radius: 4px;
-  background: linear-gradient(180deg, rgba(255, 245, 220, 0.85), rgba(255, 220, 180, 0.4));
-  box-shadow:
-    0 0 24px 6px rgba(255, 230, 190, 0.35),
-    inset 0 0 0 2px rgba(255, 245, 220, 0.4);
-}
+/* Backward-compat alias */
+.scene-before { background-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1100&q=70&auto=format&fit=crop'); filter: grayscale(0.92) brightness(0.48) contrast(0.92); }
+
+/* The "window light" overlay used to be an abstract draw — no longer needed
+   when the photo already has natural light. Keep the class as a no-op so
+   existing HTML doesn't break. */
+.scene-window { display: none; }
 
 /* ===== Typography ===== */
 .eyebrow {
